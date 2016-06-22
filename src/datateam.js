@@ -26,7 +26,7 @@ module.exports = {
           users.features.push(val);
         }
       });
-      if (lastedits.features.length > 0) {
+      if (users.features.length > 0) {
         process.stdout.write(JSON.stringify(users) + '\n');
       }
     }).on('close', function() {});
