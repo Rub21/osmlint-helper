@@ -16,7 +16,7 @@ program
   .parse(process.argv);
 
 var file = process.argv.slice(2)[1];
-if (program.dateaday) {
+if (program.yesterday) {
   lastday.filter(file);
 }
 if (program.filterdatateam) {
