@@ -1,0 +1,29 @@
+{
+  "name": "osmlint-filter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "minimist": "^1.2.0",
+    "mapbox-data-team": "*",
+    "readline": "^1.3.0"
+  },
+    "bin": {
+    "osmlint-filter": "index.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rub21/osmlint-filter.git"
+  },
+  "author": "Ruben Lopez M <ruben@mapbox.com> (http://rub21.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rub21/osmlint-filter/issues"
+  },
+  "homepage": "https://github.com/Rub21/osmlint-filter#readme"
+}
