@@ -6,10 +6,7 @@ var program = require('commander');
 var datateam = require('./src/datateam');
 var lastday = require('./src/lastday');
 var togeojson = require('./src/togeojson');
-
 var merge = require('./src/merge');
-
-
 program
   .version('0.0.1')
   .option('-y, --yesterday', 'filter daya from las day')
