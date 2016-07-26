@@ -9,7 +9,7 @@ var togeojson = require('./src/togeojson');
 var merge = require('./src/merge');
 program
   .version('0.0.1')
-  .option('-y, --yesterday', 'filter daya from las day')
+  .option('-y, --yesterday', 'filter yesterday changes')
   .option('-f, --filterdatateam', 'Filter data from mapbox data team')
   .option('-s, --splitperuser', 'Split json file into small geojson files')
   .option('-g, --togeojson', 'Convert osmlint output to geojson')
