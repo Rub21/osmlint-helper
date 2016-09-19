@@ -16,8 +16,8 @@ program
   .option('-f, --filterdatateam', 'Filter data from mapbox data team')
   .option('-s, --splitperuser', 'Split json file into small geojson files')
   .option('-g, --togeojson', 'Convert osmlint output to geojson')
-  .option('-m, --merge', 'merger all chunk ways in one in a geojson')
-  .option('-l, --featureinline', 'Set up each feature in line')
+  .option('-m, --merge', 'merger all chunk ways in a geojson')
+  .option('-l, --featureinline', 'Put each feature in line')
 
 .parse(process.argv);
 
@@ -38,6 +38,5 @@ if (program.merge) {
   merge.merge(file);
 }
 if (program.featureinline) {
-  //type mean, the type of features that we will set in each line
   featureinline.toline(file, argv.type);
 }
