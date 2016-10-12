@@ -3,8 +3,8 @@
 var fs = require('fs');
 var readline = require('readline');
 module.exports = {
-  filterbygeometrytype: function(file, type) {
-    var types = ['Point', 'MultiPoint', 'LineString', 'MultiLineString', 'Polygon', 'MultiPolygon'];
+  filterbywaytype: function(file, type) {
+    var types = ['major', 'minor', 'path', 'major-major', 'major-minor', 'major-path', 'minor-major', 'minor-minor', 'minor-path', 'path-major', 'path-minor', 'path-path'];
     if (type) {
       types = type.split(',');
     }
@@ -17,7 +17,7 @@ module.exports = {
       var obj = JSON.parse(line);
       var features = [];
       for (var i = 0; i < obj.features.length; i++) {
-        if (types.indexOf(obj.features[i].geometry.type) > -1) {
+        if (types.indexOf(obj.features[i].properties._type) > -1) {
           features.push(obj.features[i]);
         }
       }

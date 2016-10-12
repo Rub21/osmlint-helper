@@ -10,6 +10,7 @@ var togeojson = require('./src/togeojson');
 var merge = require('./src/merge');
 var featureinline = require('./src/featureinline');
 var filterpergeometry = require('./src/filterpergeometry');
+var filtertypeways = require('./src/filtertypeways');
 
 program
   .version('0.0.1')
@@ -20,7 +21,9 @@ program
   .option('-m, --merge', 'merger all chunk ways in a geojson')
   .option('-l, --featureinline', 'Put each feature in line')
   .option('-t, --filterpergeometry', 'filter a osmlint output file for geometry')
-  .parse(process.argv);
+  .option('-w, --filtertypeways', 'filter type of ways according osmlint classifications')
+
+.parse(process.argv);
 
 var file = process.argv.slice(2)[1];
 if (program.yesterday) {
@@ -42,5 +45,8 @@ if (program.featureinline) {
   featureinline.toline(file, argv.type);
 }
 if (program.filterpergeometry) {
-  filterpergeometry.filterbytipe(file, argv.type);
+  filterpergeometry.filterbygeometrytype(file, argv.type);
+}
+if (program.filtertypeways) {
+  filtertypeways.filterbywaytype(file, argv.type);
 }
