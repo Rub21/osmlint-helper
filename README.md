@@ -29,7 +29,7 @@ npm install && npm link
 
 - **Convert osmlint output json file to geojson file**
 
-`osmlint-filter -y unconnectedhighways.tofix.json > unconnectedhighways.geojson`
+`osmlint-filter -g unconnectedhighways.tofix.json > unconnectedhighways.geojson`
 
 - **Merger all chunk ways in a geojson**
 
@@ -47,5 +47,6 @@ or
 `osmlint-filter -l unconnectedhighways.tofix.json --type Point,MultiPoint,LineString > unconnectedhighways.json`
 
 
+- **fFilter a osmlint output file for geometry**
 
-
+`osmlint-filter -t unconnectedhighways.tofix.json --type Point,MultiPoint > unconnectedhighways.json`

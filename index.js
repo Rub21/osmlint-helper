@@ -9,6 +9,7 @@ var lastday = require('./src/lastday');
 var togeojson = require('./src/togeojson');
 var merge = require('./src/merge');
 var featureinline = require('./src/featureinline');
+var filterpergeometry = require('./src/filterpergeometry');
 
 program
   .version('0.0.1')
@@ -18,8 +19,8 @@ program
   .option('-g, --togeojson', 'Convert osmlint output to geojson')
   .option('-m, --merge', 'merger all chunk ways in a geojson')
   .option('-l, --featureinline', 'Put each feature in line')
-
-.parse(process.argv);
+  .option('-t, --filterpergeometry', 'filter a osmlint output file for geometry')
+  .parse(process.argv);
 
 var file = process.argv.slice(2)[1];
 if (program.yesterday) {
@@ -39,4 +40,7 @@ if (program.merge) {
 }
 if (program.featureinline) {
   featureinline.toline(file, argv.type);
+}
+if (program.filterpergeometry) {
+  filterpergeometry.filterbytipe(file, argv.type);
 }
