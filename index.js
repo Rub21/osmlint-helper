@@ -10,6 +10,7 @@ var merge = require('./src/merge');
 var featureinline = require('./src/featureinline');
 var filterpergeometry = require('./src/filterpergeometry');
 var filtertypeways = require('./src/filtertypeways');
+var comparehash = require('./src/comparehash');
 
 program
   .version('0.0.1')
@@ -21,6 +22,7 @@ program
   .option('-l, --featureinline', 'Put each feature in line')
   .option('-t, --filterpergeometry', 'filter a osmlint output file for geometry')
   .option('-w, --filtertypeways', 'filter type of ways according osmlint classifications')
+  .option('-c, --comparehash', 'compare hash, between not and error issues from to-fix and new detection from osmlint, the output are the issues which are not equal to the hash')
 
 .parse(process.argv);
 
@@ -48,4 +50,7 @@ if (program.filterpergeometry) {
 }
 if (program.filtertypeways) {
   filtertypeways.filterbywaytype(file, argv.type);
+}
+if (program.comparehash) {
+  comparehash.compare(file, argv.url);
 }

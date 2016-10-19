@@ -47,6 +47,22 @@ or
 `osmlint-filter -l unconnectedhighways.tofix.json --type Point,MultiPoint,LineString > unconnectedhighways.json`
 
 
-- **fFilter a osmlint output file for geometry**
+- **Filter a osmlint output file for geometry**
 
 `osmlint-filter -t unconnectedhighways.tofix.json --type Point,MultiPoint > unconnectedhighways.json`
+
+
+- **Filter a osmlint output according the type of highway**
+
+```
+'major', 'minor', 'path', 'major-major', 'major-minor', 'major-path', 'minor-major', 'minor-minor', 'minor-path', 'path-major', 'path-minor', 'path-path'
+```
+
+`osmlint-filter -t unconnectedhighways.tofix.json --type major,minor > unconnectedhighways-type.json`
+
+
+- **Filter a osmlint output according the type of highway**
+
+
+`
+osmlint-filter -c unconnectedhighways.tofix.json --url http://localhost:8000/tasks/crossinghighwaysnpa/items/action/noterror > unconnectedhighways-filter.json`
