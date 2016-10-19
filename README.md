@@ -61,7 +61,7 @@ or
 `osmlint-filter -t unconnectedhighways.tofix.json --type major,minor > unconnectedhighways-type.json`
 
 
-- **Filter a osmlint output according the type of highway**
+- **Filter a osmlint output according the hash which is coming from the to-fix API**
 
 
 `
