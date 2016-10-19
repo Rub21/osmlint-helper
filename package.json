@@ -8,6 +8,7 @@
     "mapbox-data-team": "*",
     "minimist": "^1.2.0",
     "readline": "^1.3.0",
+    "request": "^2.75.0",
     "sha1": "^1.1.1",
     "underscore": "^1.8.3"
   },
