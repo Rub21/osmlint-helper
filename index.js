@@ -12,6 +12,7 @@ var filterpergeometry = require('./src/filterpergeometry');
 var filtertypeways = require('./src/filtertypeways');
 var comparehash = require('./src/comparehash');
 var tomultipoint = require('./src/tomultipoint');
+var mergegeobyid = require('./src/mergegeobyid');
 
 program
   .version('0.0.1')
@@ -25,6 +26,7 @@ program
   .option('-w, --filtertypeways', 'filter type of ways according osmlint classifications')
   .option('-c, --comparehash', 'compare hash, between not and error issues from to-fix and new detection from osmlint, the output are the issues which are not equal to the hash')
   .option('-p, --tomultipoint', 'convert Linestring, Polygons to multipoints')
+  .option('-o, --mergegeobyid', 'merge points to multipoint - overlaphighways- fix later')
 
 .parse(process.argv);
 
@@ -56,7 +58,9 @@ if (program.filtertypeways) {
 if (program.comparehash) {
   comparehash.compare(file, argv.url);
 }
-
 if (program.tomultipoint) {
   tomultipoint.multipoint(file, argv.url);
+}
+if (program.mergegeobyid) {
+  mergegeobyid.merge(file, argv.url);
 }
