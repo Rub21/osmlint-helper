@@ -51,7 +51,7 @@ module.exports = {
       });
     }).on('close', function() {
       for (var user in users) {
-        fs.writeFile(user + '.geojson', JSON.stringify(users[user]));
+        fs.writeFile(user.replace(/ /g, '-') + '.geojson', JSON.stringify(users[user]));
       }
     });
   }
