@@ -13,6 +13,7 @@ var filtertypeways = require('./src/filtertypeways');
 var comparehash = require('./src/comparehash');
 var tomultipoint = require('./src/tomultipoint');
 var mergegeobyid = require('./src/mergegeobyid');
+var mergeArray = require('./src/mergeArray');
 
 program
   .version('0.0.1')
@@ -27,6 +28,9 @@ program
   .option('-c, --comparehash', 'compare hash, between not and error issues from to-fix and new detection from osmlint, the output are the issues which are not equal to the hash')
   .option('-p, --tomultipoint', 'convert Linestring, Polygons to multipoints')
   .option('-o, --mergegeobyid', 'merge points to multipoint - overlaphighways- fix later')
+  .option('-r, --mergearrayfiles', 'merge teo array files into one')
+  .option('-u, --mergearrayfilesandurl', 'merge teo array files into one')
+
 
 .parse(process.argv);
 
@@ -63,4 +67,10 @@ if (program.tomultipoint) {
 }
 if (program.mergegeobyid) {
   mergegeobyid.merge(file, argv.url);
+}
+if (program.mergearrayfiles) {
+  mergeArray.mergeArrayFiles(file, argv.file)
+}
+if (program.mergearrayfilesandurl) {
+  mergeArray.mergeArrayFileURL(file, argv.url)
 }
