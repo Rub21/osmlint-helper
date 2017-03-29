@@ -60,7 +60,7 @@ if (program.filtertypeways) {
   filtertypeways.filterbywaytype(file, argv.type);
 }
 if (program.comparehash) {
-  comparehash.compare(file, argv.url);
+  comparehash.compare(file, argv.file);
 }
 if (program.tomultipoint) {
   tomultipoint.multipoint(file, argv.url);
