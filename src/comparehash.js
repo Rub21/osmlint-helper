@@ -12,7 +12,7 @@ module.exports = {
         hashItems = JSON.parse(data);
       }
       var rd = readline.createInterface({
-        input: fs.createReadStream(file),
+        input: fs.createReadStream(geojsonFile),
         output: process.stdout,
         terminal: false
       });
