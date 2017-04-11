@@ -20,5 +20,22 @@ module.exports = {
         }
       });
     }).on('close', function() {});
+  },
+  simplificar: function(file) {
+    var ids = [];
+    var rd = readline.createInterface({
+      input: fs.createReadStream(file),
+      output: process.stdout,
+      terminal: false
+    });
+    rd.on('line', function(line) {
+      var obj = JSON.parse(line);
+      obj.features.forEach(function(val) {
+        if (ids.indexOf(val.properties.id) === -1) {
+          ids.push(val.properties.id);
+          process.stdout.write(JSON.stringify(val) + '\n');
+        }
+      });
+    }).on('close', function() {});
   }
 };
