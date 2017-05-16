@@ -13,7 +13,7 @@ module.exports = {
     });
     rd.on('line', function(line) {
       var obj = JSON.parse(line);
-      geojson.features = geojson.features.concat(obj.features);
+      geojson.features = geojson.features.concat(obj);
     }).on('close', function() {
       process.stdout.write(JSON.stringify(geojson));
     });
