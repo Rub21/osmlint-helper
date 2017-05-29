@@ -58,7 +58,7 @@ or
 'major', 'minor', 'path', 'major-major', 'major-minor', 'major-path', 'minor-major', 'minor-minor', 'minor-path', 'path-major', 'path-minor', 'path-path'
 ```
 
-`osmlint-filter -t unconnectedhighways.tofix.json --type major,minor > unconnectedhighways-type.json`
+`osmlint-filter -w unconnectedhighways.tofix.json --type major,minor > unconnectedhighways-type.json`
 
 
 - **Filter a osmlint output according the hash which is coming from the to-fix API**
