@@ -13,7 +13,11 @@ module.exports = {
     });
     rd.on('line', function(line) {
       var obj = JSON.parse(line);
-      geojson.features = geojson.features.concat(obj);
+      if (obj.type === 'FeatureCollection') {
+        geojson.features = geojson.features.concat(obj.features);
+      } else {
+        geojson.features = geojson.features.concat(obj);
+      }
     }).on('close', function() {
       process.stdout.write(JSON.stringify(geojson));
     });
