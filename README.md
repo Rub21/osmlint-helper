@@ -66,3 +66,12 @@ or
 
 `
 osmlint-filter -c unconnectedhighways.tofix.json --url http://localhost:8000/tasks/crossinghighwaysnpa/items/action/noterror > unconnectedhighways-filter.json`
+
+
+- **Clip**
+
+```
+osmlint-filter -i imputfile.geojson clipfile.geojson > output.geojson
+```
+
+

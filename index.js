@@ -14,6 +14,7 @@ var comparehash = require('./src/comparehash');
 var tomultipoint = require('./src/tomultipoint');
 var mergegeobyid = require('./src/mergegeobyid');
 var mergeArray = require('./src/mergeArray');
+var clip = require('./src/clip');
 
 program
   .version('0.0.1')
@@ -30,6 +31,7 @@ program
   .option('-o, --mergegeobyid', 'merge points to multipoint - overlaphighways- fix later')
   .option('-r, --mergearrayfiles', 'merge teo array files into one')
   .option('-u, --mergearrayfilesandurl', 'merge teo array files into one')
+  .option('-i, --clip', 'clip the layer')
 
 
 .parse(process.argv);
@@ -73,4 +75,10 @@ if (program.mergearrayfiles) {
 }
 if (program.mergearrayfilesandurl) {
   mergeArray.mergeArrayFileURL(file, argv.url)
+}
+
+if (program.clip) {
+  var imputFile = process.argv.slice(2)[1];
+  var clipFile = process.argv.slice(2)[2];
+  clip.clip(imputFile, clipFile)
 }
