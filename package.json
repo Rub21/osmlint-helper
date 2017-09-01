@@ -1,7 +1,7 @@
 {
-  "name": "osmlint-filter",
+  "name": "osmlint-helper",
   "version": "1.0.1",
-  "description": "",
+  "description": "This repo works with the osmlint and osmlint-osmium output files, filtering, processing, etc",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.9.0",
@@ -14,20 +14,23 @@
     "underscore": "^1.8.3"
   },
   "bin": {
-    "osmlint-filter": "index.js"
+    "osmlinth": "index.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard src/*.js *.js",
+    "fix": "standard --fix src/*.js *.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rub21/osmlint-filter.git"
+    "url": "git+https://github.com/Rub21/osmlint-helper.git"
   },
   "author": "Ruben Lopez M <ruben@mapbox.com> (http://rub21.github.io/)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rub21/osmlint-filter/issues"
+    "url": "https://github.com/Rub21/osmlint-helper/issues"
   },
-  "homepage": "https://github.com/Rub21/osmlint-filter#readme"
+  "homepage": "https://github.com/Rub21/osmlint-helper#readme"
 }

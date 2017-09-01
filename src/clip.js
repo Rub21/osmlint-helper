@@ -1,36 +1,34 @@
-var fs = require('fs');
-var _ = require('underscore');
-var turf = require('turf');
+var fs = require('fs')
+var turf = require('turf')
 
 module.exports = {
-  clip: function(imputfile, clipfile) {
-
-    fs.readFile(imputfile, 'utf8', function(err, features) {
+  clip: function (imputfile, clipfile) {
+    fs.readFile(imputfile, 'utf8', function (err, features) {
       if (err) {
-        features = [];
+        features = []
       } else {
-        features = JSON.parse(features);
+        features = JSON.parse(features)
       }
 
       var output = {
-        "type": "FeatureCollection",
-        "features": []
-      };
+        'type': 'FeatureCollection',
+        'features': []
+      }
 
-      fs.readFile(clipfile, 'utf8', function(err, poly) {
+      fs.readFile(clipfile, 'utf8', function (err, poly) {
         if (err) {
-          poly = [];
+          poly = []
         } else {
-          poly = JSON.parse(poly).features[0];
+          poly = JSON.parse(poly).features[0]
         }
         for (var i = 0; i < features.features.length; i++) {
-          var centroid = turf.centroid(features.features[i]);
+          var centroid = turf.centroid(features.features[i])
           if (turf.inside(centroid, poly)) {
-            output.features.push(features.features[i]);
+            output.features.push(features.features[i])
           }
         }
-        console.log(JSON.stringify(output));
-      });
-    });
+        console.log(JSON.stringify(output))
+      })
+    })
   }
-};
+}
