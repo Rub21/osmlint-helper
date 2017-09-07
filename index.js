@@ -75,7 +75,6 @@ if (program.mergearrayfiles) {
 if (program.mergearrayfilesandurl) {
   mergeArray.mergeArrayFileURL(file, argv.url)
 }
-
 if (program.clip) {
   var imputFile = process.argv.slice(2)[1]
   var clipFile = process.argv.slice(2)[2]

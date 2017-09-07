@@ -11,6 +11,13 @@ npm install && npm link
 
 ```
 
+or
+
+```
+npm install osmlint-helper -g
+
+```
+
 ### Command line
 
 - **Filter yesterday changes**

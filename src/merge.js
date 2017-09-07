@@ -4,7 +4,6 @@ var _ = require('underscore')
 module.exports = {
   merge: function (file) {
     var geojson = JSON.parse(fs.readFileSync(file).toString())
-    // console.log(geojson);
     var result = {}
     var features = geojson.features
     for (var i = 0; i < features.length; i++) {
