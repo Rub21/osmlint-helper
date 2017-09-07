@@ -1,6 +1,6 @@
 {
   "name": "osmlint-helper",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "This repo works with the osmlint and osmlint-osmium output files, filtering, processing, etc",
   "main": "index.js",
   "dependencies": {
