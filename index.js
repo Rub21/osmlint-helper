@@ -15,6 +15,10 @@ var tomultipoint = require('./src/tomultipoint')
 var mergegeobyid = require('./src/mergegeobyid')
 var mergeArray = require('./src/mergeArray')
 var clip = require('./src/clip')
+var removenull = require('./src/removeNull')
+var getmembersrelation = require('./src/getmembersrelation')
+var count = require('./src/count')
+var filterbytag = require('./src/filterbytag')
 
 program
   .version('0.0.1')
@@ -32,6 +36,10 @@ program
   .option('-r, --mergearrayfiles', 'merge teo array files into one')
   .option('-u, --mergearrayfilesandurl', 'merge teo array files into one')
   .option('-i, --clip', 'clip the layer')
+  .option('-n, --removenull', 'remove null item from geojson')
+  .option('-b, --getmembersrelation', 'get members from relation')
+  .option('-a, --filterbytag', 'Filter by a tag of the geojson property')
+  .option('-z, --count', 'count number ob objects per version in a geojson file')
 
 .parse(process.argv)
 
@@ -79,4 +87,22 @@ if (program.clip) {
   var imputFile = process.argv.slice(2)[1]
   var clipFile = process.argv.slice(2)[2]
   clip.clip(imputFile, clipFile)
+}
+if (program.removenull) {
+  removenull(file)
+}
+if (program.getmembersrelation) {
+  getmembersrelation.getmembers(file)
+}
+if (program.filterbytag) {
+  var opts = {}
+  for (var tag in argv) {
+    if (tag !== '_' && tag !== 'a') {
+      opts[tag] = argv[tag]
+    }
+  }
+  filterbytag.filterbytag(file, opts)
+}
+if (program.count) {
+  count.count(file)
 }

@@ -81,4 +81,20 @@ osmlinth -c unconnectedhighways.tofix.json --url http://localhost:8000/tasks/cro
 osmlinth -i imputfile.geojson clipfile.geojson > output.geojson
 ```
 
+- **Remove null elements**
+
+```
+osmlinth -n imputfile.geojson >  output.geojson
+```
+
+
+- **Get members from relation**
+
+This functionality is basically for osm [osmlint-osmium](https://github.com/osmlab/osmlint-osmium) output, most of this outputs contain the members in `properties.relations`
+
+```
+osmlinth -b imputfile.geojson >  output.geojson
+
+```
+
 
