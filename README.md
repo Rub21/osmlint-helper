@@ -98,3 +98,60 @@ osmlinth -b imputfile.geojson >  output.geojson
 ```
 
 
+- **Filter objects by tag**
+
+Filter the objects according tags(properties in the geojson).
+
+e.g
+
+```
+osmlinth -a atlanta-objs.geojson --type="restriction" > atlanta-tr.geojson
+
+or 
+
+osmlinth -filterbytag atlanta-objs.geojson --type="restriction" > atlanta-tr.geojson
+
+```
+
+- **Count tags(properties) in a geojson**
+
+Count all properties(tags) from geojson files.
+
+e.g
+
+```
+osmlinth --count atlanta-tr.geojson > atlanta-num-objs.json
+
+```
+
+the ouput would be like this:
+
+
+```
+{
+    "members": {
+        "created": 0,
+        "modifited": 341
+    },
+    "implicit": {
+        "created": 0,
+        "modifited": 53
+    },
+    "restriction": {
+        "created": 0,
+        "modifited": 325
+    },
+    "type": {
+        "created": 0,
+        "modifited": 341
+    },
+    "restriction:conditional": {
+        "created": 0,
+        "modifited": 16
+    },
+    "name": {
+        "created": 0,
+        "modifited": 1
+    }
+}
+```
