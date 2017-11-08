@@ -1,0 +1,8 @@
+*.html
+*.pbf
+*.geojson
+test.json
+node_modules/
+.DS_Store
+test/fixtures/output.json
+*.html

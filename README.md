@@ -81,4 +81,77 @@ osmlinth -c unconnectedhighways.tofix.json --url http://localhost:8000/tasks/cro
 osmlinth -i imputfile.geojson clipfile.geojson > output.geojson
 ```
 
+- **Remove null elements**
 
+```
+osmlinth -n imputfile.geojson >  output.geojson
+```
+
+
+- **Get members from relation**
+
+This functionality is basically for osm [osmlint-osmium](https://github.com/osmlab/osmlint-osmium) output, most of this outputs contain the members in `properties.relations`
+
+```
+osmlinth -b imputfile.geojson >  output.geojson
+
+```
+
+
+- **Filter objects by tag**
+
+Filter the objects according tags(properties in the geojson).
+
+e.g
+
+```
+osmlinth -a atlanta-objs.geojson --type="restriction" > atlanta-tr.geojson
+
+or 
+
+osmlinth -filterbytag atlanta-objs.geojson --type="restriction" > atlanta-tr.geojson
+
+```
+
+- **Count tags(properties) in a geojson**
+
+Count all properties(tags) from geojson files.
+
+e.g
+
+```
+osmlinth --count atlanta-tr.geojson > atlanta-num-objs.json
+
+```
+
+the ouput would be like this:
+
+
+```
+{
+    "members": {
+        "created": 0,
+        "modifited": 341
+    },
+    "implicit": {
+        "created": 0,
+        "modifited": 53
+    },
+    "restriction": {
+        "created": 0,
+        "modifited": 325
+    },
+    "type": {
+        "created": 0,
+        "modifited": 341
+    },
+    "restriction:conditional": {
+        "created": 0,
+        "modifited": 16
+    },
+    "name": {
+        "created": 0,
+        "modifited": 1
+    }
+}
+```

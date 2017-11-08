@@ -23,14 +23,5 @@
     "test": "standard src/*.js *.js",
     "fix": "standard --fix src/*.js *.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rub21/osmlint-helper.git"
-  },
-  "author": "Ruben Lopez M <ruben@mapbox.com> (http://rub21.github.io/)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Rub21/osmlint-helper/issues"
-  },
-  "homepage": "https://github.com/Rub21/osmlint-helper#readme"
+  "homepage": "https://github.com/osmlab/osmlint-helper#readme"
 }
