@@ -1,4 +1,4 @@
-# osmlint-helper
+# This repo is continuing  in https://github.com/osmlab/osmlint-helper
 
 Help to handle the output [osmlint](https://github.com/osmlab/osmlint) and [osmlint-osmium](https://github.com/osmlab/osmlint-osmium) files.
 
