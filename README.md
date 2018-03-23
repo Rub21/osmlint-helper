@@ -74,13 +74,13 @@ or
 - **Clip GeoJSON from a polygon**
 
 ```
-osmlinth -i imputfile.geojson clipfile.geojson > output.geojson
+osmlinth -i input.geojson clipfile.geojson > output.geojson
 ```
 
 - **Remove null elements**
 
 ```
-osmlinth -n imputfile.geojson >  output.geojson
+osmlinth -n input.geojson >  output.geojson
 ```
 
 - **Get members from relations**
@@ -89,14 +89,14 @@ This functionality is basically for osm [osmlint-osmium](https://github.com/osml
 most of this outputs contain the members in `properties.relations`
 
 ```
-osmlinth -b imputfile.geojson >  output.geojson
+osmlinth -b input.geojson >  output.geojson
 
 ```
 
 
 - **Filter objects by tag**
 
-Filter the objects according tags(properties in the geojson).
+Filter the objects according tags (properties in the geojson).
 
 e.g
 
